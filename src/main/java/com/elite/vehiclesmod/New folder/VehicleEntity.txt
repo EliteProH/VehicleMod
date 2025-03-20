@@ -1,0 +1,11 @@
+package com.elite.vehiclesmod;
+
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.level.Level;
+
+public class VehicleEntity extends Boat {
+    public VehicleEntity(EntityType<? extends Boat> type, Level level) {
+        super(type, level);
+    }
+}

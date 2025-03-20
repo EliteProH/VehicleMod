@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "vehiclesmod:porsche_911",
+        "texture_width": 64,
+        "texture_height": 64
+      },
+      "bones": [
+        {
+          "name": "body",
+          "pivot": [0, 24, 0],
+          "cubes": [
+            {
+              "origin": [-8, -4, -12],
+              "size": [16, 4, 24],
+              "uv": [0, 0]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

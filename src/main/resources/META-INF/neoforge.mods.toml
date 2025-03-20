@@ -1,0 +1,19 @@
+modLoader="javafml"
+loaderVersion="[6,)"
+license="MIT"
+
+[[mods]]
+modId="vehiclesmod"
+version="1.0"
+displayName="Vehicles Mod"
+authors="YourName"
+description='''
+A mod that adds vehicles to Minecraft.
+'''
+
+[[dependencies.vehiclesmod]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.4,)"
+    ordering="AFTER"
+    side="BOTH"
