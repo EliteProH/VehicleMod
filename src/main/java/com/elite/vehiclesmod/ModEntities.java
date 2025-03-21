@@ -1,26 +1,32 @@
+// ModEntities.java - Fixed entity registration & spawn egg
 package com.elite.vehiclesmod;
 
 import com.elite.vehiclesmod.entities.VehicleEntity;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 public class ModEntities {
-    // Deferred register for entities
     public static final DeferredRegister<EntityType<?>> ENTITIES =
             DeferredRegister.create(Registries.ENTITY_TYPE, VehiclesMod.MODID);
 
-    // Register the Porsche entity
-    public static final RegistryObject<EntityType<VehicleEntity>> PORSCHE_911_GT3_RS =
-            ENTITIES.register("porsche_911_gt3_rs", 
-                () -> EntityType.Builder.of(VehicleEntity::new, MobCategory.MISC)
-                    .sized(1.5F, 0.6F)
-                    .build("porsche_911_gt3_rs"));
+    public static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(Registries.ITEM, VehiclesMod.MODID);
 
-    // Register entities method
-    public static void register() {
-        ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+    public static final Supplier<EntityType<VehicleEntity>> PORSCHE_911_GT3_RS =
+            ENTITIES.register("porsche_911_gt3_rs",
+                    () -> EntityType.Builder.<VehicleEntity>of(VehicleEntity::new, MobCategory.MISC)
+                            .sized(3.0F, 2.0F)
+                            .build("porsche_911_gt3_rs"));
+
+    public static void register(IEventBus eventBus) {
+        ENTITIES.register(eventBus);
+        ITEMS.register(eventBus);
     }
 }

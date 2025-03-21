@@ -1,19 +1,31 @@
-modLoader="javafml"
-loaderVersion="[6,)"
-license="MIT"
+modLoader = "javafml"
+loaderVersion = "*"
+license = "MIT"
 
 [[mods]]
-modId="vehiclesmod"
-version="1.0"
-displayName="Vehicles Mod"
-authors="YourName"
-description='''
-A mod that adds vehicles to Minecraft.
-'''
+modId = "vehiclesmod"
+version = "1.0"
+displayName = "Vehicles Mod"
+authors = "YourName"
+description = '''A mod that adds cars, including the Porsche 911 GT3 RS, to Minecraft.'''
 
 [[dependencies.vehiclesmod]]
-    modId="geckolib"
-    mandatory=true
-    versionRange="[4.4,)"
-    ordering="AFTER"
-    side="BOTH"
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0.57-beta,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.vehiclesmod]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21,1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.vehiclesmod]]
+modId = "geckolib"
+type = "required"
+versionRange = "[4.4,)"
+ordering = "AFTER"
+side = "BOTH"
